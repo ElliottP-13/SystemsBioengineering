@@ -9,8 +9,7 @@ LDE is a way to easily construct a system of differential equations from a logic
 It is very similar to boolean and fuzzy logic networks.
 We use LDEs to construct a model of a cell signalling network.
 We model insulin signaling and glucose uptake [1] and compare how model parameters affect glucose uptake.
-This can help us better understand mechanisms for insulin resistance and effectiveness, 
-specifically for applications in diabetes.
+This can help us better understand mechanisms for insulin resistance, which is important factor in diabetes care.
 
 
 ### Citations

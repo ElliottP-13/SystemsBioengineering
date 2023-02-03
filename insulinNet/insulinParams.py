@@ -3,16 +3,22 @@
 import numpy as np
 
 
-def loadParams():
+def loadParams(diabetic=False):
     # species parameters
-    speciesNames = ['insulin', 'IR\'', 'IR', 'IRS1', 'PKB', 'mTORC1', 'GLUT4', 'glucose']
+    speciesNames = ['insulin', 'IR', 'IRS1', 'PKB', 'mTORC1', 'GLUT4', 'glucose']
     tau = np.ones(len(speciesNames))
     ymax = np.ones(len(speciesNames))
     y0 = np.zeros(len(speciesNames))
 
     # reaction parameters
-    w = np.ones(10)
+    w = np.ones(9)
     w[0] = 0  # insulin is an input --> means w=0????
-    n = np.ones(10) * 1.4
-    EC50 = np.ones(10) * 0.5
+    n = np.ones(9) * 1.4
+    EC50 = np.ones(9) * 0.5
+
+    if diabetic:
+        w[1] *= 0.55  # point 1
+        w[8] *= 0.5  # point 2
+        w[3] *= 0.15  # point 3
+
     return speciesNames, tau, ymax, y0, w, n, EC50
